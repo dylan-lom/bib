@@ -1,0 +1,53 @@
+BIB is a new project of sorts, one to try and sift through the garbage that
+makes its way into my brain's stack. For a while I kept track of what I read
+with pinboard.in, but it's price and lack of text search meant that I didn't
+follow through with it in following years. I also keep a journal of sorts (which
+I intend to continue using in conjunction with bib), but for in terms of
+tracking an being able to filter data it's obviously suboptimal, especially when
+a large amount of the things I'd like to track are links to articles.
+
+I'd rather not build anything too fancy around the idea, in fact I'm not
+building anything for the moment -- I've tried building a webapp[1] for this
+sort of stuff but my interest wained and it isn't quite suited for the sort of
+long-form tracking of text that I want to do here (i.e.
+[2020/12/19/orbifold.xyz/fifty-shades.html]). I might finish eventually, if only
+for a toy that I could list on my resume, but that's beside the point.
+
+I'm going to backfill some links today, for the things that are still sitting in
+my head and were recent enough that I could trace them back. This should
+hopefully help cement what kind of data I want to keep here -- although I
+needn't set any restrictions for myself really.
+
+I'll probably end up using this instead of my quasi-blog[2] if this is
+successful -- I should probably quantify success here? The goal is to keep this
+simple and portable enough that anywhere I am I can quickly stash ideas, even if
+I don't fully flesh them out at the time -- something I found with pinboard.in
+and tagging articles. I also want it to be a rich enough archive that I can
+search for words/ideas and isolate an article without needing to remember too
+many specifics about it (e.g. website, article name, exact date), while also
+storing the specifics. Hopefully the directory schema I've chosen will be
+sufficient to track the specifics, while storing details inside will allow me to
+fuzzily trace for ideas.
+
+In terms of the tooling that I'm currently avoiding making, one would be a
+symlinking tool which could aggregate articles containing 'tag words' into
+tag directories. I also think a nice interface to save articles and extract
+snippets would be useful. As a stretch some way of doing this on my phone would
+be nice, at the moment I would probably just create a GH issue to remind me and
+then fill in the details later.
+
+One thing that I intend to keep to my journal is the drivel -- the malformed
+garbage phrases that float up from time to time, although I find these quite
+entertaining I don't think they fit into the goal of this project. Additionally
+particularly personal things (such as dreams and TODOs) don't belong here.
+
+It might be a good idea to keep some lists here as well, going beyond the
+theoretical symlink tag program, some good old fashioned lists with friendly
+names linking to exact articles. This could replace playlists on things like
+YouTube, which I don't often use for actual "Play"listing, and am often quite
+dissapointend when random articles dissapear from these lists, with no more of a
+trace than [Video Deleted].
+
+[1]: github.com/dylan-lom/spt
+[2]: dlom.cc
+
