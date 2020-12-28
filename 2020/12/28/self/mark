@@ -1,0 +1,49 @@
+Another markup language
+-----------------------
+I quite like Markdown, but some things I would like to extend it with:
+
+* A header section, e.g.
+  > ---
+  > title: Hello, World
+  > date: 2020/12/28
+  > tags: post, markup
+  > ---
+
+  + I don't think that the '---' is a good delimiter, maybe a `/** */`, JavaDoc
+  style comment section.
+* Inline shell/script execution
+  > Compiled at: $(date) ($(whoami))
+
+  + A possible feature (although this might be pushing it) is allowing
+  snippets to be declared in the header section, so that you could script in
+  other languages or just simplify repetitive calls in a portable way, e.g.
+    > /**
+    >  * sh-node: $(echo "$1" | node)
+    >  */
+    >
+    > Compiled at $(sh-node 'new Date().toISOString()')
+
+* Italics with /italics/. I think that org-mode does it this way and it makes
+more sense to me, and differentiates from bold, which could be done with *bold*
+now instead. I'd guess markdown doesn't use `/` because it's much more common in
+text than `*`, so maybe this wouldn't be worthwhile.
+
+* Linking with [display text[link]], again I think this is an org-mode ism, but
+I really dislike [link](text), because it:
+  + Seperates the link from the text
+  + Emphasises the link over the text
+  + Isn't intuitive as to which bracket/order should be used (at least to me)
+
+Reviewing this list, I could probably just implement this as a pre-proccesor
+type thing, making a flow like $(preprocess < input.smd | markdown >
+output.html). I picked .smd for 'Shell MarkDown', which I think probably makes
+sense, as the most significant change would be added the shell scripting.
+
+It'd also be nice to extend something like VimWiki[1]'s ftplugin for markdown to
+support the shell scripting (and other changes if they get made).
+
+[1]: https://github.com/vimwiki/vimwiki
+
+Tags
+----
+Markup, Writing, Blog
