@@ -1,0 +1,32 @@
+===============================================================
+https://softwarefordays.com/post/resolving-the-fp-time-paradox/
+===============================================================
+
+Resolving the Time Paradox Implied by Functional Programs
+---------------------------------------------------------
+    “No man can ever cross the same river twice.” Because what’s a river? I
+    mean, we love this idea of objects; like there’s this thing that changes.
+    Right? There’s no river. Right? There’s water there at one point-in-time.
+    And another point-in-time, there’s other water there. — Rich Hickey, Are We
+    There Yet, quoting Heraclitus.
+
+    One way to resolve this paradox is to realize that it is the user’s temporal
+    existence that imposes state on the system. If the user could step back from
+    the interaction and think in terms of streams of balances rather than
+    individual transactions, the system would appear stateless — SICP Section
+    3.5.5
+
+There is nothing stopping us from taking another step back and interpreting the
+real world in which your computer currently sits as static frames, strung
+together at discrete time intervals.
+
+Our reality can be viewed as a time-series of states, just as it can be viewed
+as a collection of objects. Functional programming models a time-series of
+states, just as as object-oriented programming models objects. When the program
+and world alike can be viewed as “streams of information that flow in the
+system,” (SICP Section 3) the world can flow into the program, and the program
+back into the world.
+
+Tags
+----
+Functional.Programming, Elm, State, Paradox, Computer.Science

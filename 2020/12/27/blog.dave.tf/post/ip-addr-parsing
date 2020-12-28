@@ -1,0 +1,27 @@
+==========================================
+https://blog.dave.tf/post/ip-addr-parsing/
+==========================================
+
+Fun with IP address parsing
+---------------------------
+Fun fact, the textual representation of IPv4 was never standardized in any
+document before IPv6 needed a grammar for its weirdo “trailing dotted quad”
+notation. So, it’s a de-facto standard that boils down to mostly “what did
+4.2BSD understand?”, and “what did other OSes keep when they copied 4.2BSD?”
+
+This is the same IP address: 3232271615. You get that by interpreting the 4
+bytes of the IP address as a big-endian unsigned 32-bit integer, and print that.
+This leads to a classic parlor trick: if you try to visit http://3232271615 ,
+Chrome will load http://192.168.140.255.
+
+“Class A” notation as 192.11046143. What we’re doing is coalescing the final
+bytes of the address into either a 16-bit or a 24-bit integer field.
+
+This, by the way, is why utilities like ping will accept weird looking addresses
+like 127.1 for 127.0.0.1. Unlike IPv6, it’s not doing some kind of “missing
+fields are zero” expansion. 127.1 is the Class A notation for “host 1 of network
+127”, where the 1 is a 24-bit number.
+
+Tags
+----
+Programming, Internet, Standards, IPV6, IPV4, Parser
