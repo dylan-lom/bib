@@ -1,0 +1,54 @@
+=======================================================================
+https://www.are.na/blog/hyperland-intermedia-and-the-web-that-never-was
+=======================================================================
+
+Hyperland, Intermedia, and the Web That Never Was
+-------------------------------------------------
+In a rare early instance of mainframe computing being applied to the humanities,
+students at Brown used FRESS to read poetry. They scrolled through and annotated
+poems with “creative graffiti,” linking sections to one another wherever
+thematic associations emerged. FRESS awakened the first online scholarly
+community: in class discussions held within the system, shy students grew
+garrulous, and the FRESS class produced three times more writing than a
+computer-free control group,8 a volume significant enough for their professors
+to wonder if perhaps they’d only made more work for themselves. Undoubtedly the
+students felt empowered by FRESS’ most lasting contribution to modern computing:
+the undo function.9
+
+IRIS’ biggest project was the creation of a hypertext software system called
+Intermedia, a next-level evolution of HES and FRESS designed to be a
+fully-integrated “scholar’s workstation” for faculty and students alike. “The
+vision of Intermedia,” explains Karen Catlin, one of Nicole’s colleagues, “was
+that the professors would be using the same tool that they would be using to
+teach the students.”11 This meant the system had to be robust enough to support
+serious scholarship while still remaining user-friendly to undergraduates who
+had never so much as touched a mouse.
+
+Today, we tend to think of applications on our computers and phones as
+single-use tools. I use Pages to compose documents, Photoshop to adjust images,
+Safari to browse the Web, and Are.na to compile and organize research materials.
+Intermedia proposed that all those activities could be connected. As its name
+suggests, Intermedia was plural: it included InterText, a word processor,
+InterDraw, a drawing tool, Interpix, for looking at scanned images, InterSpect,
+a three-dimensional object viewer, and InterVal, a timeline editor. Together,
+these five applications formed an information environment, a flexible housing
+for whatever corpus of documents a scholar might want to consult.
+
+I can add Web links to a Word document, for example, and my Mail program is
+clever enough to identify names and addresses in the messages I receive, adding
+them to my Contacts or my Calendar. As practical as these connections are,
+they’re only fragments of what Intermedia made possible. Five years before the
+arrival of the World Wide Web, Intermedia empowered its users to create
+hyperlinks between their own documents. Viewed as a whole, these links formed an
+Intermedia “Web.” Distinct from the Web as we know it today, an Intermedia Web
+was a map of paths. Because information about the links made were stored in a
+separate database from the documents themselves, the program could support
+multiple perspectives on the same material. Rather than a single shared Web, a
+collectively-authored, globally-distributed tangle of hypermedia, Intermedia had
+as many Webs as it had users—each a bird’s eye view of every link traveled, and
+where it led.
+
+Tags
+----
+Technology, Early.Internet, IRIS, HES, FRESS, HTML, Networking, Hypertext,
+Xanadu
