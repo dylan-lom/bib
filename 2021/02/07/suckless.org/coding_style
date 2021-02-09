@@ -1,0 +1,20 @@
+==================================
+https://suckless.org/coding_style/
+==================================
+
+* Function name and argument list on next line. This allows to grep for function
+  names simply using grep ^functionname(.
+* Functions not used outside translation unit should be declared and defined
+  static.
+* Keep lines to reasonable length (max 79 characters).
+
+I don't really like a lot of these (ie. third bullet) -- probably because most
+of the points aren't expanded upon at all. I'm really glad the first point was
+explained because it makes a fair bit of sense.
+
+Most other style guides don't seem to mention use of `static`, which is nice
+they included this
+
+Tags
+----
+Programming, C.Language, Style.Guide, Coding.Style

@@ -1,0 +1,68 @@
+===============================================================
+https://www.kernel.org/doc/html/v4.10/process/coding-style.html
+===============================================================
+
+Statements longer than 80 columns will be broken into sensible chunks, unless
+exceeding 80 columns significantly increases readability and does not hide
+information. Descendants are always substantially shorter than the parent and
+are placed substantially to the right. The same applies to function headers with
+a long argument list. However, never break user-visible strings such as printk
+messages, because that breaks the ability to grep for them.
+
+Rationale: K&R.
+
+Functions should be short and sweet, and do just one thing. They should fit on
+one or two screenfuls of text (the ISO/ANSI screen size is 80x24, as we all
+know), and do one thing and do that well.
+
+The maximum length of a function is inversely proportional to the complexity and
+indentation level of that function. So, if you have a conceptually simple
+function that is just one long (but simple) case-statement, where you have to do
+lots of small things for a lot of different cases, it’s OK to have a longer
+function.
+
+However, if you have a complex function, and you suspect that a less-than-gifted
+first-year high-school student might not even understand what the function is
+all about, you should adhere to the maximum limits all the more closely. Use
+helper functions with descriptive names (you can ask the compiler to in-line
+them if you think it’s performance-critical, and it will probably do a better
+job of it than you would have done).
+
+Another measure of the function is the number of local variables. They shouldn’t
+exceed 5-10, or you’re doing something wrong. Re-think the function, and split
+it into smaller pieces. A human brain can generally easily keep track of about 7
+different things, anything more and it gets confused. You know you’re brilliant,
+but maybe you’d like to understand what you did 2 weeks from now.
+
+Albeit deprecated by some people, the equivalent of the goto statement is used
+frequently by compilers in form of the unconditional jump instruction.
+
+The goto statement comes in handy when a function exits from multiple locations
+and some common work such as cleanup has to be done. If there is no cleanup
+needed then just return directly.
+
+Choose label names which say what the goto does or why the goto exists. An
+example of a good name could be out_free_buffer: if the goto frees buffer. Avoid
+using GW-BASIC names like err1: and err2:, as you would have to renumber them if
+you ever add or remove exit paths, and they make correctness difficult to verify
+anyway.
+
+The rationale for using gotos is:
+
+    * unconditional statements are easier to understand and follow
+    * nesting is reduced
+    * errors by not updating individual exit points when making
+      modifications are prevented
+    * saves the compiler work to optimize redundant code away ;)
+
+CAPITALIZED macro names are appreciated but macros resembling functions may be
+named in lower case.* 
+
+    If the name of a function is an action or an imperative command,
+    the function should return an error-code integer.  If the name
+    is a predicate, the function should return a "succeeded" boolean.
+
+Tags
+----
+Programming, C.Language, Style.Guide, Coding.Style
+

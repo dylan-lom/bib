@@ -1,0 +1,108 @@
+========================================
+http://doc.cat-v.org/bell_labs/pikestyle
+========================================
+
+A program is a sort of publication.  It's meant to be read by the programmer,
+another programmer (perhaps yourself a few days, weeks or years later), and
+lastly a machine.  The machine doesn't care how pretty the program is - if the
+program compiles, the machine's happy - but people do, and they should.
+Sometimes they care too much: pretty printers mechanically produce pretty
+output that accentuates irrelevant detail in the program, which is as sensible
+as putting all the prepositions in English text in bold font.  Although many
+people think programs should look like the Algol-68 report (and some systems
+even require you to edit programs in that style), a clear program is not made
+any clearer by such presentation, and a bad program is only made laughable. 
+
+Pointers also require sensible notation.  np is just as mnemonic as nodepointer
+if you consistently use a naming convention from which np means ``node
+pointer'' is easily derived.  More on this in the next essay. 
+
+Finally, I prefer minimum-length but maximum-information names, and then let the
+context fill in the rest.  Globals, for instance, typically have little context
+when they are used, so their names need to be relatively evocative.  Thus I say
+maxphysaddr (not
+MaximumPhysicalAddress) for a global variable, but np not  NodePointer for a
+pointer locally defined and used.  This is largely a matter of taste, but taste
+is relevant to clarity.
+
+The use of pointers.
+--------------------
+
+The first points to a node, the second evaluates to (say) the same node.  But
+the second form is an expression; it is not so simple.  To interpret it, we must
+know what node is, what i is, and that i and node are related by the (probably
+unspecified) rules of the surrounding program.  Nothing about the expression in
+isolation can show that i is a valid index of node, let alone the index of the
+element we want.  If i and j and k are all indices into the node array, it's
+very easy to slip up, and the compiler cannot help.  It's particularly easy to
+make mistakes when passing things to subroutines: a pointer is a single thing;
+an array and an index must be believed to belong together in the receiving
+subroutine. 
+
+Procedure names.
+----------------
+Procedure names should reflect what they do; function names should reflect what
+they return.  Functions are used in expressions, often in things like if's, so
+they need to read appropriately.
+
+        if(checksize(x))
+
+is unhelpful because we can't deduce whether checksize returns true on
+error or non-error; instead
+
+        if(validsize(x))
+
+makes the point clear and makes a future mistake in using the
+routine less likely. 
+
+Complexity.
+-----------
+
+Most programs are too complicated - that is, more complex than they need to be
+to solve their problems efficiently.  Why? Mostly it's because of bad design,
+but I will skip that issue here because it's a big one.  But programs are often
+complicated at the microscopic level, and that is something I can address here.
+
+      Rule 1.  You can't tell where a program is going to spend its time.
+        Bottlenecks occur in surprising places, so don't try to second guess and
+        put in a speed hack until you've proven that's where the bottleneck is.
+
+      Rule 2.  Measure.  Don't tune for speed until you've measured, and even
+        then don't unless one part of the code overwhelms the rest.
+
+      Rule 3.  Fancy algorithms are slow when n is small, and n is usually
+        small.  Fancy algorithms have big constants. Until you know that n is
+        frequently going to be big, don't get fancy.  (Even if n does get big,
+        use Rule 2 first.) For example, binary trees are always faster than
+        splay trees for workaday problems.
+
+      Rule 4.  Fancy algorithms are buggier than simple ones, and they're much
+        harder to implement.  Use simple algorithms as well as simple data
+        structures.
+
+      Rule 5.  Data dominates.  If you've chosen the right data structures and
+        organized things well, the algorithms will almost always be self-evident.
+        Data structures, not algorithms, are central to programming.
+
+Include Files.
+--------------
+Simple rule: include files should never include include files.  If instead they
+state (in comments or implicitly) what files they need to have included first,
+the problem of deciding which files to include is pushed to the user
+(programmer) but in a way that's easy to handle and that, by construction,
+avoids multiple inclusions.  Multiple inclusions are a bane of systems
+programming.  It's not rare to have files included five or more times to compile
+a single C source file.  The Unix /usr/include/sys stuff is terrible this way.
+
+There's a little dance involving #ifdef's that can prevent a file being
+read twice, but it's usually done wrong in practice - the #ifdef's are in the
+file itself, not the file that includes it.  The result is often thousands of
+needless lines of code passing through the lexical analyzer, which is (in good
+compilers) the most expensive phase.
+
+Just follow the simple rule. 
+
+Tags
+----
+Programming, C.Language, Style.Guide, Coding.Style
+
